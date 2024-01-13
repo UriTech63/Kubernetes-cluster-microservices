@@ -1,0 +1,68 @@
+1. adservice
+image:  gcr.io/google-samples/microservices-demo/adservice:v0.2.3
+port: 9555
+env: AD_SERVICE_ADDR
+
+2. emailservice
+image: gcr.io/google-samples/microservices-demo/emailservice:v0.2.3
+port: 8080
+env: EMAIL_SERVICE_ADDR
+
+3. checkoutservice
+image:  gcr.io/google-samples/microservices-demo/checkoutservice:v0.2.3
+port: 5050
+env: CHECKOUT_SERVICE_ADDR
+
+4. recommendationservice
+image: gcr.io/google-samples/microservices-demo/recommendationservice:v0.2.3
+port: 8080
+env: RECOMMENDATION_SERVICE_ADDR
+
+5. frontend 
+image: gcr.io/google-samples/microservices-demo/frontend:v0.2.3
+port: 8080
+NB: second service (lb) to expose frontend publicly
+env: FRONTEND_ADDR
+
+6. paymentservice
+image: gcr.io/google-samples/microservices-demo/paymentservice:v0.2.3
+port: 50051
+env: PAYMENT_SERVICE_ADDR
+
+7. productcatalogservice
+image: gcr.io/google-samples/microservices-demo/productcatalogservice:v0.2.3
+port: 3550
+env: PRODUCT_CATALOG_SERVICE_ADDR
+value: "serviceName:port"
+
+8. cartservice
+image: gcr.io/google-samples/microservices-demo/cartservice:v0.2.3
+port: 7070
+env: CART_SERVICE_ADDR
+
+9. loadgenerator
+image: gcr.io/google-samples/microservices-demo/loadgenerator:v0.2.3
+
+adding users to the variable
+ - name: USERS
+     value: "10"
+
+10.currencyservice
+image: gcr.io/google-samples/microservices-demo/currencyservice:v0.2.3
+port: 7000
+env: CURRENCY_SERVICE_ADDR
+
+11. shippingservice
+image: gcr.io/google-samples/microservices-demo/shippingservice:v0.2.3
+port: 50051
+env: SHIPPING_SERVICE_ADDR
+
+12. redis-cart
+image: redis:alpine
+port: 6379
+env: REDIS_ADDR
+
+
+
+
+Services communicate with their environmental variables

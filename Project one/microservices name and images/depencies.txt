@@ -1,0 +1,32 @@
+1. checkoutservice 
+connects to:
+- emailservice
+- paymentservice
+- shippingservice
+- currencyservice
+- productcatalogservice
+- cartservice
+
+2. frontend
+connects to:
+- adservice
+- checkoutservice
+- shippingservice
+- currencyservice 
+- productcatalogservice
+- recommendationservice
+- cart
+
+3. cartservice
+connects to: 
+- redis-services
+
+4. recommendationservice 
+connects to: 
+- productcatalogservice
+
+5. loadgenerator
+connects to: 
+- frontend
+
+6. internet access to frontend 
